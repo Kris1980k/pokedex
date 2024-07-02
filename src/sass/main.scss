@@ -1,4 +1,25 @@
-$classic : rgb(237, 11, 11);
-h1{
-    color: $classic;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+$yellow:(255, 203, 5);
+$blue:(61, 125, 202);
+$navy_blue:(0, 58, 112);
+$black:(0,0,0);
+*{
+    font-family: "Open Sans", sans-serif;
+    text-transform: capitalize;
 }
+
+a{
+    text-decoration: none;
+    color:$black;
+}
+
+a:hover{
+    scale: 2;
+}
+
+
+h1{
+    color: $yellow;
+}
+
