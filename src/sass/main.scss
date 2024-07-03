@@ -1,25 +1,128 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-$yellow:(255, 203, 5);
-$blue:(61, 125, 202);
-$navy_blue:(0, 58, 112);
-$black:(0,0,0);
+$yellow:rgb(255, 203, 5);
+$blue:rgb(61, 125, 202);
+$blue-background:#04338D;
+$sky:#DEEFFF;
+$darkSky:#3A6CB8;
+$orange:#FF810A;
+$gray:#2F3430;
+$navy_blue:rgb(0, 58, 112);
+$black:rgb(15,15,15);
+$black_transparent:rgb(15,15,15,0.9);
+@mixin pkm_font(){
+    text-shadow: 2px 0px $navy_blue, -2px 0px $navy_blue, 0 2px $navy_blue, 0 -2px $navy_blue, 1px 1px $navy_blue , 1px -1px $navy_blue, -1px 1px $navy_blue, -1px -1px $navy_blue;
+}
+
 *{
     font-family: "Open Sans", sans-serif;
     text-transform: capitalize;
+    box-sizing: content-box;
 }
 
 a{
     text-decoration: none;
-    color:$black;
+    color:$black;    
 }
 
-a:hover{
-    scale: 2;
+.navbar{
+    position: block;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100vw;
+    background-color: $gray;
 }
 
-
-h1{
+.navbar__title{
     color: $yellow;
+    display: flex;
+    align-items: center;
+    @include pkm_font();
+    font-size: 1.8rem;
 }
+.navbar__input{
+    outline: none;
+    float: right;
+}
+.navbar__button{
+    border-radius: 50%;
+}
+.navbar__button:hover{
+    cursor: pointer;
+}
+
+
+.container{
+    background: $blue-background;
+    display: flex;
+    width: 100vw;
+    height: calc(100vh - 70px);    
+}
+.pkm-list-container{
+    float: right;
+    overflow-y: scroll;
+}
+
+.pkm-element{
+    background: $orange;
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 100px;
+    margin: 10px 0px;
+    border-radius: 15px;
+}
+.pkm-element__inside{
+    background: white;
+    width: 500px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    float: right;
+}
+.pkm-element__name{
+    color:$black;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.pkm-element__check-btn{
+    color:$black;
+    font-size: 2.15rem;
+    margin-left: 30px;
+    margin-right: 15px;
+    background: $black_transparent;
+    border-radius: 100%;
+}
+.pkm-element__check-btn:hover{
+    transform: scale(1.15);
+    transition: transform 0.2s;
+}
+
+
+.pkm-display{
+    width: 920px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: block;
+}
+.pkm-display__card{
+    width: 66%;
+    border-radius: 150px 50px 150px 50px;  
+    height: 95%;
+    background: linear-gradient($darkSky 5%,$sky 50%,$darkSky 95%);
+
+}
+.pkm-display__info{
+    width: 30%;
+    height: 95%;
+    margin-left: 10px;
+    background-color: $black;
+}
+
+
 
