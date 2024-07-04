@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+/*Types*/
 * {
   font-family: "Open Sans", sans-serif;
   text-transform: capitalize;
@@ -17,6 +18,7 @@ a {
   height: 50px;
   width: 100vw;
   background-color: #2F3430;
+  padding: 0.2rem;
 }
 
 .navbar__title {
@@ -25,15 +27,37 @@ a {
   align-items: center;
   text-shadow: 2px 0px rgb(0, 58, 112), -2px 0px rgb(0, 58, 112), 0 2px rgb(0, 58, 112), 0 -2px rgb(0, 58, 112), 1px 1px rgb(0, 58, 112), 1px -1px rgb(0, 58, 112), -1px 1px rgb(0, 58, 112), -1px -1px rgb(0, 58, 112);
   font-size: 1.8rem;
+  margin-right: 2rem;
 }
 
 .navbar__input {
   outline: none;
-  float: right;
+  height: 40px;
+  width: 350px;
+  background: radial-gradient(#E4CE92, #8C8260);
+  font-size: 1.2rem;
+  padding-left: 10px;
+  outline: none;
+  color: rgb(15, 15, 15);
+  margin-right: 1rem;
+}
+
+.navbar__input:focus {
+  outline: rgb(255, 203, 5);
+}
+
+.navbar__input::placeholder {
+  color: rgb(15, 15, 15);
 }
 
 .navbar__button {
-  border-radius: 50%;
+  border-radius: 200px 200px;
+  height: 40px;
+  width: 30px;
+  font-size: 1.2rem;
+  background: radial-gradient(#E4CE92, #8C8260);
+  border: 2px solid rgb(15, 15, 15);
+  margin-right: 2rem;
 }
 
 .navbar__button:hover {
@@ -71,6 +95,7 @@ a {
   align-items: center;
   padding-left: 5px;
   float: right;
+  cursor: pointer;
 }
 
 .pkm-element__name {
@@ -109,10 +134,36 @@ a {
 }
 
 .pkm-display__info {
+  box-sizing: border-box;
   width: 30%;
   height: 95%;
   margin-left: 10px;
+  color: white;
+  padding: 10px;
   background-color: rgb(15, 15, 15);
+}
+
+.pkm-display__data {
+  color: rgb(255, 203, 5);
+}
+
+.pkm-display__image {
+  width: 75%;
+  height: 75%;
+  margin: 12.5% 12.5% 12.5% 12.5%;
+}
+
+.pkm-display__audio {
+  height: 50px;
+  width: 95%;
+}
+
+.pkm-display__typeList {
+  list-style-type: disc;
+}
+
+.pkm-display__typeListElement {
+  margin-left: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */

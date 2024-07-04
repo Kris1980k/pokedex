@@ -4,7 +4,7 @@ import DisplayPokemon from './Components/DisplayPokemon'
 import SearchBar from './Components/SearchBar'
 function App() {
 
-  const [search,setSearch] = useState('');
+  const [search,setSearch] = useState('charmander');
   const [query,setQuery] = useState('');
 
   const [name,setName] = useState([]);
@@ -12,7 +12,11 @@ function App() {
   const [number,setNumber] = useState([]);
 
   const [displayName,setDisplayName] = useState('');
-  const [type,setType] = useState('')
+  const [type,setType] = useState([])
+  const [image,setImage] = useState('')
+  const [weight,setWeight] = useState('');
+  const [cry,setCry] = useState('')
+
 
 
   {
@@ -39,6 +43,8 @@ function App() {
       setNumber(numbers);
     })
   },[])
+
+
   const handleSearch =(e)=>{
     setSearch(e.target.value)
   }
@@ -46,18 +52,29 @@ function App() {
     e.preventDefault()
     setQuery(search.toLowerCase())
   }
-
+  const handleDisplayedPokemon = (name)=>{    
+    setImage()
+    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+    .then((r)=>r.json())
+    .then((d)=>{
+      setDisplayName(d.name)
+      setType(d.types)
+      setImage(d.sprites.front_default)
+      setCry(d.cries.legacy)
+      setWeight(d.weight)
+    })
+  }
   return (
     <>
       <header>
         <SearchBar search={search} handleQuery={handleQuery} handleSearch={handleSearch}/>
       </header>
       <section className="container">
-        <DisplayPokemon />
+        <DisplayPokemon name={displayName} type={type} image={image} cry={cry} weight={weight}/>
         <div className="pkm-list-container">
           {
             name.map((e,i)=>(
-              <PokemonLi name={e} link={link[i]} number={number[i]}/>
+              <PokemonLi key={Math.random()} name={e} link={link[i]} number={number[i]} handleDisplayedPokemon={handleDisplayedPokemon}/>
             ))
           }
         </div>
