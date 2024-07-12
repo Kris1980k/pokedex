@@ -4,20 +4,46 @@ import DisplayPokemon from './Components/DisplayPokemon'
 import SearchBar from './Components/SearchBar'
 function App() {
 
-  const [search,setSearch] = useState('charmander');
+  const [search,setSearch] = useState('');
   const [query,setQuery] = useState('');
-
+  
   const [name,setName] = useState([]);
+  const [filtered,setFiltered] = useState([]);
   const [link,setLink] = useState([]);
   const [number,setNumber] = useState([]);
+  const [captured, setCaptured] = useState([1,2,3,4,5]);
 
   const [displayName,setDisplayName] = useState('');
   const [type,setType] = useState([])
-  const [image,setImage] = useState('')
+  const [image,setImage] = useState('src/assets/images/pokeball.png')
   const [weight,setWeight] = useState('');
-  const [cry,setCry] = useState('')
+  const [cry,setCry] = useState("")
 
 
+  const mark = (e) => {
+    console.log(e , " wants to be marked")
+    let newCaptured;
+    if (captured.includes(e)){
+      newCaptured = captured.filter((num) => num != e);
+    }
+    else {
+      newCaptured = [...captured, e]      
+    }
+    setCaptured(newCaptured);
+  }
+
+  const filter = () => {
+    const filteredList = name.filter((e) => e.toLowerCase().includes(query.toLowerCase()));
+    setFiltered(filteredList);
+    if (query.length <= 0 ){
+      setFiltered(name)
+      console.log(":VVVV")
+    }
+  }
+
+  useEffect(() => {
+    filter();
+  }, [query])
 
   {
     /*fetch('/')
@@ -39,6 +65,7 @@ function App() {
         return pkm.url
       })
       setName(names)
+      setFiltered(names)
       setLink(links)
       setNumber(numbers);
     })
@@ -67,14 +94,14 @@ function App() {
   return (
     <>
       <header>
-        <SearchBar search={search} handleQuery={handleQuery} handleSearch={handleSearch}/>
+        <SearchBar search={search} handleQuery={handleQuery} handleSearch={handleSearch} captured={captured}/>
       </header>
       <section className="container">
         <DisplayPokemon name={displayName} type={type} image={image} cry={cry} weight={weight}/>
         <div className="pkm-list-container">
           {
-            name.map((e,i)=>(
-              <PokemonLi key={Math.random()} name={e} link={link[i]} number={number[i]} handleDisplayedPokemon={handleDisplayedPokemon}/>
+            filtered.map((e,i)=>(
+              <PokemonLi key={Math.random()} name={e} link={link[i]} number={number[i]} handleDisplayedPokemon={handleDisplayedPokemon} captured={captured} mark={mark}/>
             ))
           }
         </div>

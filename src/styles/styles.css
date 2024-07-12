@@ -6,6 +6,74 @@
   box-sizing: content-box;
 }
 
+.water {
+  color: #539AE2;
+}
+
+.fire {
+  color: #EA7A3C;
+}
+
+.dark {
+  color: #736C75;
+}
+
+.dragon {
+  color: #6A7BAF;
+}
+
+.flying {
+  color: #7DA6DE;
+}
+
+.ghost {
+  color: #846AB6;
+}
+
+.grass {
+  color: #71C558;
+}
+
+.ground {
+  color: #CC9F4F;
+}
+
+.ice {
+  color: #70CBD4;
+}
+
+.normal {
+  color: #AAB09F;
+}
+
+.poison {
+  color: #B468B7;
+}
+
+.psychic {
+  color: #E5709B;
+}
+
+.rock {
+  color: #B2A061;
+}
+
+.steel {
+  color: #89A1B0;
+}
+
+.bug {
+  color: #94BC4A;
+}
+
+.electric {
+  color: #E5C531;
+}
+
+.fighting {
+  color: #CB5F48;
+}
+
 a {
   text-decoration: none;
   color: rgb(15, 15, 15);
@@ -19,6 +87,22 @@ a {
   width: 100vw;
   background-color: #2F3430;
   padding: 0.2rem;
+}
+
+.navbar__icon {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.pkm-element__number {
+  background-color: rgba(15, 15, 15, 0.9);
+  width: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-left: 0.3rem;
 }
 
 .navbar__title {
@@ -111,6 +195,30 @@ a {
   margin-right: 15px;
   background: rgba(15, 15, 15, 0.9);
   border-radius: 100%;
+}
+
+.pkm-element__check-capturedContainer {
+  color: rgb(15, 15, 15);
+  font-size: 2.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-left: 30px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 15, 15, 0.9);
+  border-radius: 100%;
+}
+
+.pkm-element__check-capturedContainer:hover {
+  transform: scale(1.15);
+  transition: transform 0.2s;
+}
+
+.pkm-element__check-image {
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 .pkm-element__check-btn:hover {

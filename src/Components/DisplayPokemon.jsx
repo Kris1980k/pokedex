@@ -18,9 +18,7 @@ function DisplayPokemon({name,type,image, cry ,weight}) {
             <div className='pkm-display__info'>
                 <ul>
                     <li>
-                        <audio controls className='pkm-display__audio'>
-                            <source src={cry} type='audio/ogg'/>
-                            Your device does not support audio playing...
+                        <audio controls className='pkm-display__audio' src={cry}>
                         </audio>
                     </li>
                     <li>
@@ -35,7 +33,7 @@ function DisplayPokemon({name,type,image, cry ,weight}) {
                             {
                                 type.map((e)=>(
                                     <li key={Math.random()} className='pkm-display__typeListElement'>
-                                        <p>
+                                        <p className={e.type.name.toLowerCase()}>
                                             {e.type.name}
                                         </p>
                                     </li>                                    
