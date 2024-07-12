@@ -15,7 +15,7 @@ function App() {
 
   const [displayName,setDisplayName] = useState('');
   const [type,setType] = useState([])
-  const [image,setImage] = useState('src/assets/images/pokeball.png')
+  const [image,setImage] = useState('https://pngimg.com/uploads/pokeball/pokeball_PNG21.png')
   const [weight,setWeight] = useState('');
   const [cry,setCry] = useState("")
 

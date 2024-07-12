@@ -9,7 +9,7 @@ function PokemonLi({name,link,number,handleDisplayedPokemon,captured,mark}) {
                 <div onClick={()=> mark(number)}>
                     {
                         captured.includes(number) ? <div className='pkm-element__check-capturedContainer'>
-                            <img src='src/assets/images/pokeball.png' alt="Captured" className='pkm-element__check-image'/>
+                            <img src='https://pngimg.com/uploads/pokeball/pokeball_PNG21.png' alt="Captured" className='pkm-element__check-image'/>
                         </div> : <FontAwesomeIcon icon={faCircle}  className='pkm-element__check-btn'/>  
                     }
                 </div>

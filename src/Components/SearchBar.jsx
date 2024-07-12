@@ -14,7 +14,7 @@ function SearchBar({search,handleQuery,handleSearch,captured}) {
                 </button>            
             </form>
             <div className='navbar__icon'>
-                <img src='src/assets/images/pokeball.png' alt="Captured" className='pkm-element__check-image'/>
+                <img src='https://pngimg.com/uploads/pokeball/pokeball_PNG21.png' alt="Captured" className='pkm-element__check-image'/>
                 <span className='pkm-element__number'>{captured.length}</span>
             </div>
             <div className='navbar__icon'>
